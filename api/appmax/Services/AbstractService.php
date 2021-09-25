@@ -16,7 +16,7 @@ abstract class AbstractService
 
     public function all($filter)
     {
-        return $this->repository->all($filter);
+        return $this->repository->all();
     }
 
     public function find($id)
