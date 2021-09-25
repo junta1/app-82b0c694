@@ -1,8 +1,17 @@
 # Desafio AppMax
 
+## Tecnologias utilizadas
+
+- PHP 8.0
+- Laravel 8.54
+- MySql 5.7
+- Adminer 4.8.1
+- Docker
+- Docker Compose
+
 ## Baixando projeto
 
-`git clone https://github.com/junta1/app-82b0c694.git
+`git clone https://github.com/junta1/app-82b0c694.git`
 
 ## Levantar o Container
 
