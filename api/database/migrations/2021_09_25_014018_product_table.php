@@ -17,7 +17,7 @@ class ProductTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('sku')->unique();
-            $table->string('quantity');
+            $table->bigInteger('quantity');
             $table->timestamps();
         });
     }

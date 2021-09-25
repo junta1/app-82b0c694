@@ -16,6 +16,7 @@ class ProductMovimentTable extends Migration
         Schema::create('product_moviment', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('sku');
+            $table->bigInteger('quantity');
             $table->timestamps();
 
             $table->foreign('sku')->references('sku')->on('product');
