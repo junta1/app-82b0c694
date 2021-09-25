@@ -19,6 +19,11 @@ abstract class AbstractService
         return $this->repository->all($filter);
     }
 
+    public function find($id)
+    {
+        return $this->repository->find($id);
+    }
+
     public function save($data)
     {
         return $this->repository->store($data);

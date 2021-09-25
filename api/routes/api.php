@@ -13,4 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('product', '\AppMax\Http\Controllers\ProductController')->only('index', 'store', 'update', 'destroy');
+// Route::resource('product', '\AppMax\Http\Controllers\ProductController')->only('index', 'store', 'update', 'destroy');
+
+Route::apiResources([
+    'product' => '\AppMax\Http\Controllers\ProductController'
+]);

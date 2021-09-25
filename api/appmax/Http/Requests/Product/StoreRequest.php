@@ -7,7 +7,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 use Illuminate\Contracts\Validation\Validator;
 
-class UpdatePostRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     protected function failedValidation(Validator $validator)
     {
@@ -52,7 +52,7 @@ class UpdatePostRequest extends FormRequest
 
             'sku.required' => 'O campo sku é obrigatório!',
             'sku.max' => 'O campo sku possui o tamanho máximo de 255 caracteres!',
-
+            
             'quantity.required' => 'O campo quantity é obrigatório!',
         ];
     }
