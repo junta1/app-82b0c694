@@ -3,6 +3,7 @@
 namespace AppMax\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 abstract class AbstractRepository
 {
@@ -20,7 +21,10 @@ abstract class AbstractRepository
 
     public function store($data)
     {
-        return $this->model->create($data);
+        $this->beginTransaction();
+        $this->model->create($data);
+        $this->commit();
+        return $this->model;
     }
 
     public function find($id)
@@ -31,12 +35,24 @@ abstract class AbstractRepository
     public function update($data, $id)
     {
         $findResult = $this->find($id);
-
-        return $findResult->update($data);
+        $this->beginTransaction();
+        $findResult->update($data);
+        $this->commit();
+        return $findResult;
     }
 
     public function destroy($id)
     {
         return $this->find($id)->delete();
+    }
+
+    protected function beginTransaction()
+    {
+        return DB::beginTransaction();
+    }
+
+    protected function commit()
+    {
+        return DB::commit();
     }
 }

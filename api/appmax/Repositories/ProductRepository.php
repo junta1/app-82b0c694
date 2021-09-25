@@ -12,4 +12,9 @@ class ProductRepository extends AbstractRepository
     {
         $this->model = $product;
     }
+
+    public function verifyQuantity($id)
+    {
+        return $this->model->select('quantity')->where('id', '=', $id)->first();
+    }
 }

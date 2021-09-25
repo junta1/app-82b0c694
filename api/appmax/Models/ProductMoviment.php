@@ -5,7 +5,7 @@ namespace AppMax\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class ProductMoviment extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,7 @@ class Product extends Model
 
     protected $fillable = [
         'sku',
-        'quantity'
+        'quantity',
+        'moviment'
     ];
 }
