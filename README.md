@@ -15,7 +15,7 @@
 
 ## Levantar o Container
 
-Acesse ao projeto (entre no diretório desafio-appmax) e lavante o container: 
+Acesse ao projeto (entre no diretório app-82b0c694) e lavante o container: 
 
 `docker-compose up -d`
 
