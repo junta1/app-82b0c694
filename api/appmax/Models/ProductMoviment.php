@@ -14,6 +14,7 @@ class ProductMoviment extends Model
     protected $fillable = [
         'sku',
         'quantity',
-        'moviment'
+        'moviment',
+        'current_quantity'
     ];
 }

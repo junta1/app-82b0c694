@@ -19,6 +19,7 @@ class ProductHistoryListResource extends JsonResource
             'sku' => $this->sku,
             'quantity' => $this->quantity,
             'moviment' => $this->moviment,
+            'current_quantity' => $this->current_quantity,
             'date_moviment' => Carbon::parse($this->created_at)->format('Y/m/d H:i:s'),
         ];
 

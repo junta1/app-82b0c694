@@ -18,6 +18,7 @@ class ProductMovimentTable extends Migration
             $table->string('sku');
             $table->bigInteger('quantity');
             $table->string('moviment');
+            $table->bigInteger('current_quantity')->nullable();
             $table->timestamps();
 
             $table->foreign('sku')->references('sku')->on('product');

@@ -28,24 +28,28 @@ class ProductMovimentObserver
         $oldQuantity = $productRepository->verifyQuantity($product->id);
 
         $moviment = '';
+        $addRm = '';
 
         if ($product->quantity > $oldQuantity->quantity) {
             $moviment = 'Adicionado';
+            $addRm = $product->quantity - $oldQuantity->quantity;
         } elseif ($product->quantity < $oldQuantity->quantity) {
             $moviment = 'Removido';
+            $addRm = $oldQuantity->quantity - $product->quantity;
         } else {
             $moviment = 'Valor Inalterado';
         }
 
-        ProductMoviment::create($this->data($product, $moviment));
+        ProductMoviment::create($this->data($product, $moviment, $addRm));
     }
 
-    protected function data($model, $moviment)
+    protected function data($model, $moviment, $addRm = null)
     {
         $data = [
             'sku' => $model->sku,
-            'quantity' => $model->quantity,
-            'moviment' => $moviment
+            'quantity' => (empty($addRm) ? $model->quantity : $addRm),
+            'moviment' => $moviment,
+            'current_quantity' => $model->quantity,
         ];
 
         return $data;
