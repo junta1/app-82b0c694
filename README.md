@@ -9,6 +9,11 @@
 - Docker 20.10.7
 - Docker Compose 1.26.0
 
+## Padrão de projeto
+
+- Service Repository
+Desta forma, mantenho o repositório responsável por acessar o banco de dados e tudo relacionado a ele, na camada de serviço, mantenho toda a regra de negócio, dessa forma, deixo distribuído e separado cada classe com sua devida responsabilidade.
+
 ## Baixando projeto
 
 `git clone https://github.com/junta1/app-82b0c694.git`
@@ -45,7 +50,7 @@ Altere as permissões:
 `chmod -R 777 storage/ bootstrap/`
 
 Copiar e colar o arquivo .env.example 
-situado em (desafio-appmax/api/.env.example) para .env no mesmo local ou executar o comando:
+situado em (app-82b0c694/api/.env.example) para .env no mesmo local ou executar o comando:
 
 `cp .env.example  .env`
 
