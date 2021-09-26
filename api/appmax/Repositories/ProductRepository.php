@@ -17,4 +17,9 @@ class ProductRepository extends AbstractRepository
     {
         return $this->model->select('quantity')->where('id', '=', $id)->first();
     }
+
+    public function uniqueSku($sku)
+    {
+        return $this->model->select('sku')->where('sku', '=', $sku)->get();
+    }
 }

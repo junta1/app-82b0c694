@@ -2,6 +2,7 @@
 
 namespace AppMax\Http\Requests\Product;
 
+use AppMax\Http\Rules\uniqueSkuStore;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
@@ -33,7 +34,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:255',
-            'sku' => 'required|max:255',
+            'sku' => ['required','max:255', new uniqueSkuStore],
             'quantity' => 'required',
         ];
     }
