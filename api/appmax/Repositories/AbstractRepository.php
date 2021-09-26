@@ -24,7 +24,7 @@ abstract class AbstractRepository
         $this->beginTransaction();
         $this->model->create($data);
         $this->commit();
-        return $this->model;
+        return $this->model->all();
     }
 
     public function find($id)

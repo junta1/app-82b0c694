@@ -16,4 +16,9 @@ class Product extends Model
         'sku',
         'quantity'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }
