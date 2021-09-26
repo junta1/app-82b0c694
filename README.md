@@ -6,8 +6,8 @@
 - Laravel 8.54
 - MySql 5.7
 - Adminer 4.8.1
-- Docker
-- Docker Compose
+- Docker 20.10.7
+- Docker Compose 1.26.0
 
 ## Baixando projeto
 
@@ -15,7 +15,7 @@
 
 ## Levantar o Container
 
-Acesse ao projeto (entre no diretório desafio-appmax) e lavante o container: 
+Acesse ao projeto (entre no diretório app-82b0c694) e lavante o container: 
 
 `docker-compose up -d`
 
